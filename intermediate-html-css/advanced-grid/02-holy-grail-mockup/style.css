@@ -6,7 +6,7 @@
 .container {
   text-align: center;
 
-  height: 1vh; 
+  height: 1vh;
 
   display: grid;
   grid-template-rows: 2fr 1fr 4fr 1fr;
@@ -76,17 +76,37 @@
   font-weight: normal;
 }
 
+.sidebar .photo,
+.sidebar .side-content {
+    display: grid;
+    place-items: center;
+}
+
 .nav {
   background-color: #C50208;
+
+  grid-column: 2 / -1;
 }
 
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  list-style: none;
+}
+
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .article {
   background-color: #bccbde;
+
+  grid-area: 3 / 2 / -2 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 15px;
 }
 
 .article p {
@@ -115,6 +135,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-area: -2 / 1 / -1 / -1;
 }
 
 .footer p {
